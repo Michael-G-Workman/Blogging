@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Blogging.Models
 {
+    // designate table and schema
     [Table("Blog", Schema="dbo")]
     public partial class Blog
     {
