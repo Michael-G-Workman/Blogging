@@ -1,0 +1,49 @@
+﻿@model List<Blogging.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleOrDefault().Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleOrDefault().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleOrDefault().Blog)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog.Url)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Posts", new { id = item.PostId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", "Posts", new { id = item.PostId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", "Posts", new { id = item.PostId }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

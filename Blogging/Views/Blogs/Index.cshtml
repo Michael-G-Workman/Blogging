@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Blogging.Models.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Blogs", new { id = item.BlogId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Details", "Details", "Blogs", new { id = item.BlogId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", "Blogs", new { id = item.BlogId }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* Original Links
+
+    <a asp-action="Edit" asp-route-id="@item.BlogId">Edit</a>
+    <a asp-action="Details" asp-route-id="@item.BlogId">Details</a>
+    <a asp-action="Delete" asp-route-id="@item.BlogId">Delete</a>
+
+*@
