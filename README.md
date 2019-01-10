@@ -10,7 +10,7 @@ or in Visual Studio. This script is located in the SQL Server repository.
 
 This Solution is freely distributable with the MIT Open Source License.
 
-By Michael G. Workman, President and Software Architect, Abion Technology
+By Michael G. Workman
 
-(c) 2018 Abion Technology
-http://www.abion.net
+(c) 2018 Michael G. Workman
+http://www.michaelgworkman.com
